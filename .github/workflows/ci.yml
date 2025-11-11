@@ -122,7 +122,8 @@ jobs:
         with:
           name: nix-installer-${{ matrix.system }}
           path: install-root/
-
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - name: Set installer components as executable
         env:
           INSTALL_ROOT: ${{ steps.download-installer.outputs.download-path }}
